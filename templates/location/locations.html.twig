@@ -50,6 +50,9 @@
 			margin-left: auto;
 			margin-right: auto;
 		}
+		.totalGains {
+			font-weight: bold;
+		}
 	</style>
 
 	<div class="example-wrapper">
@@ -73,7 +76,8 @@
 				{% for location in locations %}
 					<tr>
 						<td>{{ location.locataire }}</td>
-						<td>{{ location.gain }}</td>
+						<td>{{ location.gain }}
+							€</td>
 						<td>
 							{{ location.dateDebut |date('d/m/Y')}}
 						</td>
@@ -86,8 +90,25 @@
 							</a>
 						</td>
 					</tr>
-				</td>
+				{% endfor %}
+				<tr>
+					<td class="totalGains">
+						Total des gains</td>
+					<td>
+						{% set totalGains = 0 %}<div>
+							{% for location in locations %}
+								{% set totalGains = totalGains + (location.gain ) %}
+							{% endfor %}
+						</div>
+						{{ totalGains }}€
+					</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
 			</tbody>
-		</tr>
-	{% endfor %}
-</tbody></tbody></table></div>{% endblock %}
+
+
+		</table>
+	</div>
+{% endblock %}

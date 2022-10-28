@@ -39,6 +39,7 @@ class LocationRepository extends ServiceEntityRepository
         }
     }
 
+
     //    /**
     //     * @return Location[] Returns an array of Location objects
     //     */
@@ -52,6 +53,8 @@ class LocationRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     } */
+
+
 
     //    public function findOneBySomeField($value): ?Location
     //    {

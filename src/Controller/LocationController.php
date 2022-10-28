@@ -25,6 +25,8 @@ class LocationController extends AbstractController
         ]);
     }
 
+
+
     /**
      * @Route("/locations", name="locations-list")
      */
@@ -32,6 +34,13 @@ class LocationController extends AbstractController
     {
         $locationRepo = $this->getDoctrine()->getRepository(Location::class);
         $locations = $locationRepo->findAll();
+
+
+
+
+
+
+
         return $this->render('location/locations.html.twig', [
             'controller_name' => 'LocationController',
             'locations' => $locations
