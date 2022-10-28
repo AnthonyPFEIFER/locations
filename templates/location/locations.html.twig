@@ -19,6 +19,7 @@
 		td {
 			width: 150px;
 			border: solid #000 1px;
+			text-align: center;
 		}
 		.form {
 			background-color: #15172b;
@@ -28,13 +29,36 @@
 			padding: 20px;
 			width: 320px;
 		}
+		.addBtn {
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: #1BD063;
+			text-decoration: none;
+			margin-bottom: 50px;
+		}
+		.fa-plus {
+			color: white;
+			font-size: 25px;
+		}
+		.fa-trash {
+			color: red;
+			font-size: 25px;
+			margin-left: auto;
+			margin-right: auto;
+		}
 	</style>
 
 	<div class="example-wrapper">
 		<h1>Hello
-			{{ controller_name }}! ✅
+			{{  app.user.username }}! ✅
 		</h1>
-		<a href="{{ path('create_location') }}">Ajouter un projet</a>
+		<a class="addBtn" href="{{ path('create_location') }}">
+			<i class="fa-solid fa-plus"></i>
+		</a>
 		<table>
 			<thead>
 				<tr>
@@ -57,7 +81,9 @@
 							{{ location.dateFin |date('d/m/Y') }}
 						</td>
 						<td>
-							<a href="{{ path('delete_location', {id: location.id}) }}">Supprimer la location</a>
+							<a href="{{ path('delete_location', {id: location.id}) }}">
+								<i class="fa-solid fa-trash"></i>
+							</a>
 						</td>
 					</tr>
 				</td>

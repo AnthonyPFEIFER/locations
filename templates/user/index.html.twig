@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserController!
+{% endblock %}
+
+{% block body %}
+	<style>
+		.example-wrapper {
+			margin: 1em auto;
+			max-width: 800px;
+			width: 95%;
+			font: 18px / 1.5 sans-serif;
+		}
+		.example-wrapper code {
+			background: #F5F5F5;
+			padding: 2px 6px;
+		}
+	</style>
+
+	<div class="example-wrapper">
+		<h1>Hello
+		</h1>
+
+		This friendly message is coming from:
+		<ul>
+			<li>Your controller at
+				<code>
+					<a href="{{ 'E:/wamp64/www/Symfony/locations/src/Controller/UserController.php'|file_link(0) }}">src/Controller/UserController.php</a>
+				</code>
+			</li>
+			<li>Your template at
+				<code>
+					<a href="{{ 'E:/wamp64/www/Symfony/locations/templates/user/index.html.twig'|file_link(0) }}">templates/user/index.html.twig</a>
+				</code>
+			</li>
+		</ul>
+
+		{{ form_start(form) }}
+		<div class="my-custom-class-for-errors">
+			{{ form_errors(form) }}
+		</div>
+
+		<div class="row formulaireNormalement">
+			<h1>
+				Ajouter un utilisateur
+			</h1>
+			<div class="col input-container">
+				{{ form_row(form.username) }}
+			</div>
+			<div class="cut"></div>
+			<div class="col input-container">
+				{{ form_row(form.password, { 'class': 'input'})}}
+			</div>
+
+			<div class="cut"></div>
+			<div class="input-container submit">
+				{{ form_row(form.submit, { 'label': 'Créer Utilisateur'})}}
+			</div>
+		</div>
+		{{ form_end(form) }}
+	</div>
+{% endblock %}
